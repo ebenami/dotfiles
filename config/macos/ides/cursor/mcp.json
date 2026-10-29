@@ -1,0 +1,16 @@
+{
+  "servers": {
+    "m365": {
+      "args": [
+        "m365"
+      ],
+      "type": "stdio"
+    },
+    "grafana": {
+      "args": [
+        "grafana"
+      ],
+      "type": "stdio"
+    }
+  }
+}

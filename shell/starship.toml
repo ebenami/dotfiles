@@ -1,0 +1,7 @@
+# Use Starship's default prompt on macOS and Ubuntu.
+
+[aws]
+disabled = true
+
+[python]
+format = '[(\($virtualenv\) )]($style)'

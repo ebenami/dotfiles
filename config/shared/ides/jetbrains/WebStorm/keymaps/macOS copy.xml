@@ -1,0 +1,73 @@
+<keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
+  <action id="ActivateBigDataToolWindowToolWindow">
+    <keyboard-shortcut first-keystroke="shift ctrl meta b" />
+  </action>
+  <action id="Arrangement.Rule.Edit" />
+  <action id="BookmarksView.Rename" />
+  <action id="ChangesView.Rename">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="Console.TableResult.EditValue">
+    <keyboard-shortcut first-keystroke="enter" />
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
+  <action id="Console.TableResult.GotoReferencedResult">
+    <mouse-shortcut keystroke="button1 doubleClick" />
+    <keyboard-shortcut first-keystroke="enter" />
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
+  <action id="DatabaseView.DeactivateAction" />
+  <action id="Docker.RemoteServers.StopComposeService" />
+  <action id="Docker.RemoteServers.StopContainer" />
+  <action id="FindNext">
+    <keyboard-shortcut first-keystroke="meta g" />
+    <keyboard-shortcut first-keystroke="f3" />
+  </action>
+  <action id="FindPrevWordAtCaret">
+    <keyboard-shortcut first-keystroke="shift ctrl 8" />
+  </action>
+  <action id="FindPrevious">
+    <keyboard-shortcut first-keystroke="shift meta g" />
+    <keyboard-shortcut first-keystroke="shift f3" />
+  </action>
+  <action id="FindWordAtCaret">
+    <keyboard-shortcut first-keystroke="shift 8" />
+  </action>
+  <action id="Git.Rename.Local.Branch">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="Git.Reword.Commit">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="GotoNextError" />
+  <action id="NextTab">
+    <keyboard-shortcut first-keystroke="ctrl right" />
+    <keyboard-shortcut first-keystroke="ctrl page_down" />
+  </action>
+  <action id="PreviousTab">
+    <keyboard-shortcut first-keystroke="ctrl left" />
+    <keyboard-shortcut first-keystroke="ctrl page_up" />
+  </action>
+  <action id="RunDashboard.Stop" />
+  <action id="ShelvedChanges.Rename">
+    <keyboard-shortcut first-keystroke="shift f6" />
+  </action>
+  <action id="ShowBookmarks">
+    <keyboard-shortcut first-keystroke="meta f2" />
+  </action>
+  <action id="ShowTypeBookmarks">
+    <keyboard-shortcut first-keystroke="meta alt f2" />
+  </action>
+  <action id="Stop" />
+  <action id="Table-startEditing" />
+  <action id="ToggleBookmark">
+    <keyboard-shortcut first-keystroke="f2" />
+  </action>
+  <action id="ToggleBookmark8" />
+  <action id="ToggleBookmarkWithMnemonic">
+    <keyboard-shortcut first-keystroke="alt f2" />
+  </action>
+  <action id="Tree-startEditing" />
+  <action id="WebOpenInAction" />
+  <action id="XDebugger.SetValue" />
+</keymap>

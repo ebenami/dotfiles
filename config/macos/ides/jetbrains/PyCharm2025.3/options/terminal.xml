@@ -1,0 +1,12 @@
+<application>
+  <component name="BlockTerminalUsage">
+    <shellToExecutedCommandsNumber>
+      <entry key="zsh" value="36" />
+    </shellToExecutedCommandsNumber>
+  </component>
+  <component name="ReworkedTerminalUsage">{
+  "enterKeyPressedTimes": 102,
+  "completionPopupShownTimes": 15,
+  "completionItemChosenTimes": 3
+}</component>
+</application>

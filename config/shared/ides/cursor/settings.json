@@ -1,0 +1,136 @@
+{
+  "telemetry.telemetryLevel": "off",
+  "workbench.settings.openDefaultKeybindings": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "diffEditor.maxComputationTime": 0,
+  "go.toolsManagement.autoUpdate": true,
+  "gitlens.launchpad.indicator.enabled": false,
+  "editor.minimap.enabled": false,
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "keep",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+  "files.exclude": {
+    "**/.idea": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "openInGitHub.gitHubDomain": "",
+  "gitlens.views.scm.grouped.views": {
+    "commits": true,
+    "branches": true,
+    "remotes": true,
+    "stashes": true,
+    "tags": true,
+    "worktrees": true,
+    "contributors": true,
+    "repositories": false,
+    "searchAndCompare": false,
+    "launchpad": true
+  },
+  "github.copilot.selectedCompletionModel": "",
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.newWorkspaceCreation.enabled": true,
+  "github.copilot.chat.search.semanticTextResults": true,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "chat.agent.enabled": true,
+  "gitlens.blame.format": "${message|50?} ${agoOrDate|14-} ${authorNotYou}",
+  "gitlens.views.repositories.includeWorkingTree": true,
+  "gitlens.hovers.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.hovers.avatars": false,
+  "gitlens.hovers.pullRequests.enabled": false,
+  "gitlens.hovers.autolinks.enabled": false,
+  "gitlens.hovers.autolinks.enhanced": false,
+  "gitlens.hovers.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.changes": false,
+  "gitlens.hovers.currentLine.details": false,
+  "gitlens.hovers.annotations.details": false,
+  "git.blame.statusBarItem.enabled": false,
+  "gitlens.blame.compact": false,
+  "editor.hover.enabled": "off",
+  "html.hover.documentation": false,
+  "css.hover.documentation": false,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "json",
+    "yaml"
+  ],
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.generateWithTypeAnnotation": true,
+  "python.analysis.inlayHints.callArgumentNames": "all",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.linting.enabled": true,
+  "python.linting.ruffEnabled": true,
+  "python.languageServer": "None",
+  "python.formatting.provider": "none",
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "diffEditor.ignoreTrimWhitespace": false
+  },
+  "gitHistory.includeRemoteBranches": true,
+  "ruff.lint.ignore": [
+    "F54",
+    "E402",
+    "F841"
+  ],
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "python.analysis.typeCheckingMode": "basic",
+  "cursorpyright.analysis.inlayHints.callArgumentNames": "all",
+  "cursorpyright.analysis.inlayHints.functionReturnTypes": true,
+  "cursorpyright.analysis.inlayHints.variableTypes": true,
+  "cursorpyright.analysis.typeCheckingMode": "basic",
+  "workbench.editor.enablePreview": false,
+  "remote.SSH.connectTimeout": 120,
+  "remote.SSH.useExecServer": false,
+  "remote.SSH.showLoginTerminal": true,
+  "workbench.activityBar.location": "top",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "chat.agentsControl.enabled": true,
+  "python.useEnvironmentsExtension": true,
+  "chat.tools.urls.autoApprove": {
+    "https://code.visualstudio.com": true,
+    "https://github.com/microsoft/vscode/wiki/*": true,
+    "https://github.com": {
+      "approveRequest": false,
+      "approveResponse": true
+    },
+    "https://repo1.maven.org": true,
+    "https://arrow.apache.org": true,
+    "https://*.apache.org": true,
+    "https://issues.apache.org": true
+  },
+  "python.terminal.useEnvFile": true,
+  "chat.promptFilesLocations": {
+    "~/.claude": true
+  },
+  "chat.promptFilesRecommendations": {},
+  "chat.planAgent.defaultModel": "Claude Opus 4.6 (claude-code)",
+  "github.copilot.chat.additionalReadAccessPaths": [
+    "${HOME}/.claude/skills"
+  ],
+  "github.copilot.chat.cli.branchSupport.enabled": true,
+  "github.copilot.chat.copilotMemory.enabled": true,
+  "github.copilot.chat.cli.checkpoints.enabled": true,
+  "chat.viewSessions.orientation": "stacked",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.defaultDateStyle": "absolute",
+  "redhat.telemetry.enabled": false,
+  "gitweblinks.defaultBranch": "main"
+}

@@ -1,0 +1,18 @@
+<application>
+  <component name="CloudCompletionState">
+    <languageToEnabled>
+      <entry language="yaml" enabled="true" />
+      <entry language="XML" enabled="true" />
+      <entry language="Markdown" enabled="true" />
+      <entry language="JSON" enabled="true" />
+      <entry language="Python" enabled="true" />
+      <entry language="CSS" enabled="true" />
+      <entry language="JavaScript" enabled="true" />
+      <entry language="xml" enabled="true" />
+      <entry language="json" enabled="true" />
+      <entry language="javascript.typescript" enabled="true" />
+      <entry language="css" enabled="true" />
+      <entry language="python" enabled="true" />
+    </languageToEnabled>
+  </component>
+</application>

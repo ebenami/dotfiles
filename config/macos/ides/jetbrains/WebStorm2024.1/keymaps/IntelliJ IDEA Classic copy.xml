@@ -1,0 +1,74 @@
+<keymap version="1" name="IntelliJ IDEA Classic copy" parent="Mac OS X">
+  <action id="$Cut">
+    <keyboard-shortcut first-keystroke="meta x" />
+    <keyboard-shortcut first-keystroke="shift delete" />
+    <keyboard-shortcut first-keystroke="ctrl x" />
+    <keyboard-shortcut first-keystroke="ctrl meta v" />
+  </action>
+  <action id="$Undo">
+    <keyboard-shortcut first-keystroke="meta z" />
+    <keyboard-shortcut first-keystroke="ctrl z" />
+  </action>
+  <action id="ActivateBigDataToolWindowToolWindow">
+    <keyboard-shortcut first-keystroke="shift ctrl meta b" />
+  </action>
+  <action id="BigDataTools.FindInEditor">
+    <keyboard-shortcut first-keystroke="meta f" />
+    <keyboard-shortcut first-keystroke="alt f3" />
+  </action>
+  <action id="BigDataTools.FindInTables">
+    <keyboard-shortcut first-keystroke="meta f" />
+    <keyboard-shortcut first-keystroke="alt f3" />
+  </action>
+  <action id="CheckinProject">
+    <keyboard-shortcut first-keystroke="meta k" />
+    <keyboard-shortcut first-keystroke="ctrl k" />
+  </action>
+  <action id="CloseContent">
+    <keyboard-shortcut first-keystroke="meta f4" />
+    <keyboard-shortcut first-keystroke="meta w" />
+  </action>
+  <action id="Editor Cut">
+    <keyboard-shortcut first-keystroke="ctrl x" />
+    <keyboard-shortcut first-keystroke="ctrl meta v" />
+  </action>
+  <action id="Editor Undo">
+    <keyboard-shortcut first-keystroke="ctrl z" />
+  </action>
+  <action id="EditorSelectWord" />
+  <action id="Find">
+    <keyboard-shortcut first-keystroke="meta f" />
+    <keyboard-shortcut first-keystroke="alt f3" />
+    <keyboard-shortcut first-keystroke="ctrl f" />
+  </action>
+  <action id="FindPrevious">
+    <keyboard-shortcut first-keystroke="shift f3" />
+    <keyboard-shortcut first-keystroke="shift ctrl l" />
+    <keyboard-shortcut first-keystroke="shift f" />
+  </action>
+  <action id="SaveAll">
+    <keyboard-shortcut first-keystroke="meta s" />
+    <keyboard-shortcut first-keystroke="ctrl s" />
+  </action>
+  <action id="SearchEverywhere.NextTab">
+    <keyboard-shortcut first-keystroke="tab" />
+    <keyboard-shortcut first-keystroke="ctrl page_down" />
+  </action>
+  <action id="SearchEverywhere.PrevTab">
+    <keyboard-shortcut first-keystroke="shift tab" />
+    <keyboard-shortcut first-keystroke="ctrl page_up" />
+  </action>
+  <action id="SmartSelect" />
+  <action id="SpeedSearch">
+    <keyboard-shortcut first-keystroke="meta f" />
+    <keyboard-shortcut first-keystroke="alt f3" />
+  </action>
+  <action id="TableResult.GrowSelection" />
+  <action id="TableResult.SelectColumn" />
+  <action id="TodoViewGroupByFlattenPackage" />
+  <action id="UsageGrouping.FileStructure" />
+  <action id="Vcs.Push">
+    <keyboard-shortcut first-keystroke="shift meta k" />
+    <keyboard-shortcut first-keystroke="shift ctrl k" />
+  </action>
+</keymap>

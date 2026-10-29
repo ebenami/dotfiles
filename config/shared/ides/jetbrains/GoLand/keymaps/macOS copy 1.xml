@@ -1,0 +1,47 @@
+<keymap version="1" name="macOS copy 1" parent="Mac OS X 10.5+">
+  <action id="ActivateBigDataToolWindowToolWindow">
+    <keyboard-shortcut first-keystroke="shift ctrl meta b" />
+  </action>
+  <action id="EditorNextWord">
+    <keyboard-shortcut first-keystroke="alt right" />
+    <keyboard-shortcut first-keystroke="ctrl alt f" />
+    <keyboard-shortcut first-keystroke="ctrl right" />
+  </action>
+  <action id="EditorPreviousWord">
+    <keyboard-shortcut first-keystroke="alt left" />
+    <keyboard-shortcut first-keystroke="ctrl alt b" />
+    <keyboard-shortcut first-keystroke="ctrl left" />
+  </action>
+  <action id="FindNext">
+    <keyboard-shortcut first-keystroke="meta g" />
+    <keyboard-shortcut first-keystroke="f3" />
+  </action>
+  <action id="FindPrevious">
+    <keyboard-shortcut first-keystroke="shift meta g" />
+    <keyboard-shortcut first-keystroke="shift f3" />
+  </action>
+  <action id="GotoTest" />
+  <action id="NextTab">
+    <keyboard-shortcut first-keystroke="shift meta close_bracket" />
+  </action>
+  <action id="PreviousTab">
+    <keyboard-shortcut first-keystroke="ctrl page_up" />
+  </action>
+  <action id="ReopenClosedTab">
+    <keyboard-shortcut first-keystroke="shift meta t" />
+  </action>
+  <action id="RunJsbtTask" />
+  <action id="ServiceView.ShowServices" />
+  <action id="ShowBookmarks">
+    <keyboard-shortcut first-keystroke="meta f11" />
+  </action>
+  <action id="ShowTypeBookmarks">
+    <keyboard-shortcut first-keystroke="meta alt f11" />
+  </action>
+  <action id="ToggleBookmark">
+    <keyboard-shortcut first-keystroke="f11" />
+  </action>
+  <action id="ToggleBookmarkWithMnemonic">
+    <keyboard-shortcut first-keystroke="alt f11" />
+  </action>
+</keymap>

@@ -1,0 +1,6 @@
+[
+  {
+    "key": "shift+cmd+left",
+    "command": "workbench.action.navigatePreviousInNavigationLocations"
+  }
+]

@@ -1,0 +1,8 @@
+<application>
+  <component name="NextEditSettings">{
+  "legacyMlCompletionResetApplied": true
+}</component>
+  <component name="NextEditUnifiedModelMigrationState">
+    <option name="migrationDone" value="true" />
+  </component>
+</application>

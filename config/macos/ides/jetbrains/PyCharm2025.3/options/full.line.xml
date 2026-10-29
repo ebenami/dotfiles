@@ -1,0 +1,10 @@
+<application>
+  <component name="Full Line Inline Third Parties">
+    <thirdParties>
+      <entry id="com.github.copilot" is-enabled="true" />
+    </thirdParties>
+  </component>
+  <component name="InlineShortcutChoice">
+    <option name="choiceShownTimes" value="2" />
+  </component>
+</application>

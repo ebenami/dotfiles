@@ -1,0 +1,31 @@
+[pull]
+rebase = false
+ff = true
+
+[core]
+editor = vim
+autocrlf = input
+
+[alias]
+co = checkout
+	b = branch
+	st = status
+
+[filter "lfs"]
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
+
+[init]
+defaultbranch = main
+
+[diff]
+tool = bc
+
+[difftool "bc"]
+cmd = bcomp \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+prompt = false
+

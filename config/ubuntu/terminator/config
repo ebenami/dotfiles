@@ -1,0 +1,19 @@
+[profiles]
+  [[default]]
+    use_system_font = False
+    font = Monospace 12
+    use_theme_colors = False
+    background_color = "#000000"
+    foreground_color = "#bbbbbb"
+    palette = "#000000:#bb0000:#00bb00:#bbbb00:#0000bb:#bb00bb:#00bbbb:#bbbbbb:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+    background_type = solid
+    cursor_blink = False
+    cursor_shape = block
+    cursor_color_default = False
+    cursor_bg_color = "#bbbbbb"
+    cursor_fg_color = "#ffffff"
+    copy_on_selection = True
+    scrollback_infinite = True
+    audible_bell = True
+    urgent_bell = True
+    icon_bell = True

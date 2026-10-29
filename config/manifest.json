@@ -1,0 +1,2934 @@
+[
+  {
+    "target": "${HOME}/.zshrc",
+    "source": "shell/zshrc",
+    "format": "text",
+    "mode": "link"
+  },
+  {
+    "target": "${HOME}/.vimrc",
+    "source": "config/shared/vim/vimrc",
+    "format": "text",
+    "mode": "link"
+  },
+  {
+    "target": "${HOME}/.vim/colors/vividchalk.vim",
+    "source": "config/shared/vim/colors/vividchalk.vim",
+    "format": "text",
+    "mode": "link"
+  },
+  {
+    "target": "${HOME}/.vim/plugin/file_line.vim",
+    "source": "config/shared/vim/plugin/file_line.vim",
+    "format": "text",
+    "mode": "link"
+  },
+  {
+    "target": "${HOME}/.vim/plugin/sensible.vim",
+    "source": "config/shared/vim/plugin/sensible.vim",
+    "format": "text",
+    "mode": "link"
+  },
+  {
+    "target": "${HOME}/.gitconfig",
+    "source": "config/shared/git/config",
+    "format": "ini",
+    "mode": "copy",
+    "owned": {
+      "pull": {
+        "rebase": true,
+        "ff": true
+      },
+      "core": {
+        "editor": true,
+        "autocrlf": true
+      },
+      "alias": {
+        "co": true
+      },
+      "filter \"lfs\"": {
+        "clean": true,
+        "smudge": true,
+        "process": true,
+        "required": true
+      },
+      "init": {
+        "defaultbranch": true
+      },
+      "diff": {
+        "tool": true
+      },
+      "difftool \"bc\"": {
+        "cmd": true
+      },
+      "difftool": {
+        "prompt": true
+      }
+    }
+  },
+  {
+    "target": "${CONFIG_HOME}/uv/uv.toml",
+    "source": "config/shared/python/uv.toml",
+    "format": "toml",
+    "mode": "copy",
+    "owned": {
+      "index-strategy": true
+    }
+  },
+  {
+    "target": "${HOME}/.pyenv/version",
+    "source": "config/shared/python/pyenv-version",
+    "format": "text",
+    "mode": "copy"
+  },
+  {
+    "target": "${HOME}/.codex/config.toml",
+    "source": "config/shared/ai/codex.toml",
+    "format": "toml",
+    "mode": "copy",
+    "omit_mcp": [
+      "node_repl",
+      "computer-use",
+      "pycharm"
+    ],
+    "owned": {
+      "model": true,
+      "model_reasoning_effort": true,
+      "approvals_reviewer": true,
+      "marketplaces": {
+        "openai-bundled": {
+          "source_type": true,
+          "source": true
+        },
+        "openai-primary-runtime": {
+          "source_type": true,
+          "source": true
+        }
+      },
+      "plugins": {
+        "visualize@openai-bundled": {
+          "enabled": true
+        },
+        "browser@openai-bundled": {
+          "enabled": true
+        },
+        "outlook-calendar@openai-curated": {
+          "enabled": true
+        },
+        "teams@openai-curated": {
+          "enabled": true
+        },
+        "documents@openai-primary-runtime": {
+          "enabled": true
+        },
+        "pdf@openai-primary-runtime": {
+          "enabled": true
+        },
+        "spreadsheets@openai-primary-runtime": {
+          "enabled": true
+        },
+        "presentations@openai-primary-runtime": {
+          "enabled": true
+        },
+        "template-creator@openai-primary-runtime": {
+          "enabled": true
+        },
+        "codex-app-tools@openai-bundled": {
+          "enabled": true
+        },
+        "computer-use@openai-bundled": {
+          "enabled": true
+        },
+        "unified-computer-use@openai-bundled": {
+          "enabled": true
+        },
+        "chrome@openai-bundled": {
+          "enabled": true
+        },
+        "code-review@openai-bundled": {
+          "enabled": true
+        }
+      },
+      "features": {
+        "js_repl": true
+      },
+      "mcp_servers": {
+        "markitdown": {
+          "command": true,
+          "args": true,
+          "startup_timeout_sec": true
+        },
+        "aws-mcp": {
+          "command": true,
+          "args": true
+        },
+        "awslabs-aws-documentation-mcp-server": {
+          "command": true,
+          "args": true,
+          "env": {
+            "AWS_DOCUMENTATION_PARTITION": true,
+            "FASTMCP_LOG_LEVEL": true,
+            "MCP_USER_AGENT": true
+          },
+          "tools": {
+            "read_documentation": {
+              "approval_mode": true
+            },
+            "read_sections": {
+              "approval_mode": true
+            },
+            "search_documentation": {
+              "approval_mode": true
+            }
+          }
+        }
+      },
+      "desktop": {
+        "conversationDetailMode": true,
+        "ambient-suggestions-enabled": true,
+        "followUpQueueMode": true,
+        "show-context-window-usage": true,
+        "open-in-target-preferences": {
+          "global": true
+        }
+      },
+      "tui": {
+        "alternate_screen": true,
+        "screen_reader_detection_done": true,
+        "model_availability_nux": {
+          "gpt-5.6-sol": true,
+          "gpt-6-astra": true,
+          "gpt-6.1-sol": true
+        },
+        "keymap": {
+          "editor": {
+            "insert_newline": true
+          }
+        }
+      }
+    }
+  },
+  {
+    "target": "${HOME}/.claude.json",
+    "source": "config/shared/ai/claude-mcp.json",
+    "format": "json",
+    "mode": "copy",
+    "owned": {
+      "mcpServers": {
+        "aws-mcp": {
+          "command": true,
+          "args": true
+        }
+      }
+    }
+  },
+  {
+    "target": "${HOME}/.cursor/mcp.json",
+    "source": "config/shared/ai/cursor-mcp.json",
+    "format": "json",
+    "mode": "copy",
+    "owned": {
+      "mcpServers": {
+        "aws-mcp": {
+          "command": true,
+          "args": true
+        },
+        "markitdown": {
+          "command": true,
+          "args": true,
+          "type": true
+        },
+        "awslabs.aws-api-mcp-server": {
+          "command": true,
+          "args": true,
+          "disabled": true,
+          "type": true
+        },
+        "awslabs.aws-documentation-mcp-server": {
+          "command": true,
+          "args": true,
+          "env": {
+            "FASTMCP_LOG_LEVEL": true,
+            "AWS_DOCUMENTATION_PARTITION": true,
+            "MCP_USER_AGENT": true
+          },
+          "disabled": true,
+          "type": true
+        }
+      }
+    }
+  },
+  {
+    "target": "${HOME}/.cursor/cli-config.json",
+    "source": "config/shared/ai/cursor-cli.json",
+    "format": "json",
+    "mode": "copy",
+    "owned": {
+      "version": true,
+      "editor": {
+        "vimMode": true
+      },
+      "display": {
+        "showLineNumbers": true,
+        "showThinkingBlocks": true,
+        "showStatusIndicators": true,
+        "showStatusLineRunningTime": true,
+        "mode": true
+      },
+      "notifications": true,
+      "hints": true,
+      "modelSlashCommands": true,
+      "steering": true,
+      "rewind": true,
+      "hasChangedDefaultModel": true,
+      "exploreSubagentModel": true,
+      "permissions": {
+        "allow": true,
+        "deny": true
+      },
+      "approvalMode": true,
+      "autoAcceptWebSearch": true,
+      "sandbox": {
+        "mode": true,
+        "networkAccess": true
+      },
+      "runEverythingSettingsPromptStreak": true,
+      "network": {
+        "useHttp1ForAgent": true
+      },
+      "attribution": {
+        "attributeCommitsToAgent": true,
+        "attributePRsToAgent": true
+      }
+    }
+  },
+  {
+    "target": "${HOME}/.cursor/argv.json",
+    "source": "config/macos/cursor-argv.json",
+    "format": "jsonc",
+    "mode": "copy",
+    "platform": "macos",
+    "owned": {
+      "enable-crash-reporter": true,
+      "crash-reporter-id": true
+    }
+  },
+  {
+    "target": "${HOME}/.copilot/settings.json",
+    "source": "config/shared/ai/copilot-settings.json",
+    "format": "json",
+    "mode": "copy",
+    "owned": {
+      "skillDirectories": true
+    }
+  },
+  {
+    "target": "${HOME}/.copilot/mcp-config.json",
+    "source": "config/shared/ai/copilot-mcp-config.json",
+    "format": "json",
+    "mode": "copy",
+    "owned": {
+      "mcpServers": {
+        "markitdown": {
+          "tools": true,
+          "type": true,
+          "command": true,
+          "args": true
+        },
+        "awslabs.aws-api-mcp-server": {
+          "tools": true,
+          "type": true,
+          "command": true,
+          "args": true
+        },
+        "awslabs.aws-documentation-mcp-server": {
+          "tools": true,
+          "type": true,
+          "command": true,
+          "args": true,
+          "env": {
+            "FASTMCP_LOG_LEVEL": true,
+            "AWS_DOCUMENTATION_PARTITION": true,
+            "MCP_USER_AGENT": true
+          }
+        }
+      }
+    }
+  },
+  {
+    "target": "${HOME}/.codex/AGENTS.md",
+    "source": "ai/global-rules.md",
+    "format": "text",
+    "mode": "link"
+  },
+  {
+    "target": "${APP_CONFIG}/Code/User/settings.json",
+    "source": "config/shared/ides/vscode/settings.json",
+    "format": "jsonc",
+    "mode": "copy",
+    "owned": {
+      "telemetry.telemetryLevel": true,
+      "workbench.settings.openDefaultKeybindings": true,
+      "security.workspace.trust.untrustedFiles": true,
+      "diffEditor.maxComputationTime": true,
+      "go.toolsManagement.autoUpdate": true,
+      "gitlens.launchpad.indicator.enabled": true,
+      "editor.minimap.enabled": true,
+      "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": true,
+        "editor.autoIndent": true,
+        "diffEditor.ignoreTrimWhitespace": true,
+        "editor.quickSuggestions": {
+          "other": true,
+          "comments": true,
+          "strings": true
+        }
+      },
+      "files.exclude": {
+        "**/.idea": true
+      },
+      "diffEditor.ignoreTrimWhitespace": true,
+      "openInGitHub.gitHubDomain": true,
+      "gitlens.views.scm.grouped.views": {
+        "commits": true,
+        "branches": true,
+        "remotes": true,
+        "stashes": true,
+        "tags": true,
+        "worktrees": true,
+        "contributors": true,
+        "repositories": true,
+        "searchAndCompare": true,
+        "launchpad": true
+      },
+      "github.copilot.selectedCompletionModel": true,
+      "github.copilot.chat.codesearch.enabled": true,
+      "github.copilot.chat.newWorkspaceCreation.enabled": true,
+      "github.copilot.chat.search.semanticTextResults": true,
+      "editor.quickSuggestions": {
+        "strings": true
+      },
+      "chat.agent.enabled": true,
+      "gitlens.blame.format": true,
+      "gitlens.views.repositories.includeWorkingTree": true,
+      "gitlens.hovers.enabled": true,
+      "gitlens.statusBar.enabled": true,
+      "gitlens.hovers.avatars": true,
+      "gitlens.hovers.pullRequests.enabled": true,
+      "gitlens.hovers.autolinks.enabled": true,
+      "gitlens.hovers.autolinks.enhanced": true,
+      "gitlens.hovers.currentLine.enabled": true,
+      "gitlens.hovers.currentLine.changes": true,
+      "gitlens.hovers.currentLine.details": true,
+      "gitlens.hovers.annotations.details": true,
+      "git.blame.statusBarItem.enabled": true,
+      "gitlens.blame.compact": true,
+      "editor.hover.enabled": true,
+      "html.hover.documentation": true,
+      "css.hover.documentation": true,
+      "eslint.validate": true,
+      "python.analysis.autoFormatStrings": true,
+      "python.analysis.completeFunctionParens": true,
+      "python.analysis.generateWithTypeAnnotation": true,
+      "python.analysis.inlayHints.callArgumentNames": true,
+      "python.analysis.inlayHints.functionReturnTypes": true,
+      "python.analysis.inlayHints.variableTypes": true,
+      "python.linting.enabled": true,
+      "python.linting.ruffEnabled": true,
+      "python.languageServer": true,
+      "python.formatting.provider": true,
+      "[python]": {
+        "editor.defaultFormatter": true
+      },
+      "gitHistory.includeRemoteBranches": true,
+      "ruff.lint.ignore": true,
+      "editor.formatOnSaveMode": true,
+      "python.analysis.typeCheckingMode": true
+    }
+  },
+  {
+    "target": "${APP_CONFIG}/Code/User/keybindings.json",
+    "source": "config/macos/ides/vscode/keybindings.json",
+    "format": "jsonc",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/Code - Insiders/User/settings.json",
+    "source": "config/shared/ides/vscode-insiders/settings.json",
+    "format": "jsonc",
+    "mode": "copy",
+    "owned": {
+      "telemetry.telemetryLevel": true,
+      "workbench.settings.openDefaultKeybindings": true,
+      "security.workspace.trust.untrustedFiles": true,
+      "diffEditor.maxComputationTime": true,
+      "go.toolsManagement.autoUpdate": true,
+      "gitlens.launchpad.indicator.enabled": true,
+      "editor.minimap.enabled": true,
+      "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": true,
+        "editor.autoIndent": true,
+        "diffEditor.ignoreTrimWhitespace": true,
+        "editor.quickSuggestions": {
+          "other": true,
+          "comments": true,
+          "strings": true
+        }
+      },
+      "files.exclude": {
+        "**/.idea": true
+      },
+      "diffEditor.ignoreTrimWhitespace": true,
+      "openInGitHub.gitHubDomain": true,
+      "gitlens.views.scm.grouped.views": {
+        "commits": true,
+        "branches": true,
+        "remotes": true,
+        "stashes": true,
+        "tags": true,
+        "worktrees": true,
+        "contributors": true,
+        "repositories": true,
+        "searchAndCompare": true,
+        "launchpad": true
+      },
+      "github.copilot.selectedCompletionModel": true,
+      "github.copilot.chat.codesearch.enabled": true,
+      "github.copilot.chat.newWorkspaceCreation.enabled": true,
+      "github.copilot.chat.search.semanticTextResults": true,
+      "editor.quickSuggestions": {
+        "strings": true
+      },
+      "chat.agent.enabled": true,
+      "gitlens.blame.format": true,
+      "gitlens.views.repositories.includeWorkingTree": true,
+      "gitlens.hovers.enabled": true,
+      "gitlens.statusBar.enabled": true,
+      "gitlens.hovers.avatars": true,
+      "gitlens.hovers.pullRequests.enabled": true,
+      "gitlens.hovers.autolinks.enabled": true,
+      "gitlens.hovers.autolinks.enhanced": true,
+      "gitlens.hovers.currentLine.enabled": true,
+      "gitlens.hovers.currentLine.changes": true,
+      "gitlens.hovers.currentLine.details": true,
+      "gitlens.hovers.annotations.details": true,
+      "git.blame.statusBarItem.enabled": true,
+      "gitlens.blame.compact": true,
+      "editor.hover.enabled": true,
+      "html.hover.documentation": true,
+      "css.hover.documentation": true,
+      "eslint.validate": true,
+      "python.analysis.autoFormatStrings": true,
+      "python.analysis.completeFunctionParens": true,
+      "python.analysis.generateWithTypeAnnotation": true,
+      "python.analysis.inlayHints.callArgumentNames": true,
+      "python.analysis.inlayHints.functionReturnTypes": true,
+      "python.analysis.inlayHints.variableTypes": true,
+      "python.linting.enabled": true,
+      "python.linting.ruffEnabled": true,
+      "python.languageServer": true,
+      "python.formatting.provider": true,
+      "[python]": {
+        "editor.defaultFormatter": true,
+        "diffEditor.ignoreTrimWhitespace": true
+      },
+      "gitHistory.includeRemoteBranches": true,
+      "ruff.lint.ignore": true,
+      "editor.formatOnSaveMode": true,
+      "python.analysis.typeCheckingMode": true,
+      "cursorpyright.analysis.inlayHints.callArgumentNames": true,
+      "cursorpyright.analysis.inlayHints.functionReturnTypes": true,
+      "cursorpyright.analysis.inlayHints.variableTypes": true,
+      "cursorpyright.analysis.typeCheckingMode": true,
+      "workbench.editor.enablePreview": true,
+      "remote.SSH.connectTimeout": true,
+      "remote.SSH.useExecServer": true,
+      "remote.SSH.showLoginTerminal": true,
+      "workbench.activityBar.location": true,
+      "github.copilot.nextEditSuggestions.enabled": true,
+      "chat.agentsControl.enabled": true,
+      "python.useEnvironmentsExtension": true,
+      "chat.tools.urls.autoApprove": {
+        "https://code.visualstudio.com": true,
+        "https://github.com/microsoft/vscode/wiki/*": true,
+        "https://github.com": {
+          "approveRequest": true,
+          "approveResponse": true
+        },
+        "https://repo1.maven.org": true,
+        "https://arrow.apache.org": true,
+        "https://*.apache.org": true,
+        "https://issues.apache.org": true
+      },
+      "python.terminal.useEnvFile": true,
+      "chat.promptFilesLocations": {
+        "~/.claude": true
+      },
+      "chat.promptFilesRecommendations": {},
+      "chat.planAgent.defaultModel": true,
+      "github.copilot.chat.additionalReadAccessPaths": true,
+      "github.copilot.chat.cli.branchSupport.enabled": true,
+      "github.copilot.chat.copilotMemory.enabled": true,
+      "github.copilot.chat.cli.checkpoints.enabled": true,
+      "chat.viewSessions.orientation": true,
+      "gitlens.currentLine.enabled": true,
+      "gitlens.hovers.currentLine.over": true,
+      "gitlens.defaultDateStyle": true
+    }
+  },
+  {
+    "target": "${APP_CONFIG}/Code - Insiders/User/settings.json",
+    "source": "config/macos/ides/vscode-insiders/settings.json",
+    "format": "jsonc",
+    "mode": "copy",
+    "platform": "macos",
+    "owned": {
+      "terminal.integrated.env.osx": {}
+    }
+  },
+  {
+    "target": "${APP_CONFIG}/Code - Insiders/User/keybindings.json",
+    "source": "config/macos/ides/vscode-insiders/keybindings.json",
+    "format": "jsonc",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/Code - Insiders/User/mcp.json",
+    "source": "config/macos/ides/vscode-insiders/mcp.json",
+    "format": "jsonc",
+    "mode": "copy",
+    "platform": "macos",
+    "owned": {
+      "servers": {
+        "markitdown": {
+          "command": true,
+          "args": true,
+          "type": true
+        },
+        "GitLab": {
+          "command": true,
+          "args": true,
+          "env": {
+            "GITLAB_READ_ONLY_MODE": true,
+            "USE_GITLAB_WIKI": true,
+            "USE_MILESTONE": true,
+            "USE_PIPELINE": true
+          },
+          "type": true
+        },
+        "confluence": {
+          "command": true,
+          "args": true,
+          "type": true
+        },
+        "jira": {
+          "command": true,
+          "args": true,
+          "type": true
+        },
+        "awslabs.aws-api-mcp-server": {
+          "command": true,
+          "args": true,
+          "disabled": true,
+          "autoApprove": true,
+          "type": true
+        },
+        "awslabs.aws-documentation-mcp-server": {
+          "command": true,
+          "args": true,
+          "env": {
+            "FASTMCP_LOG_LEVEL": true,
+            "AWS_DOCUMENTATION_PARTITION": true,
+            "MCP_USER_AGENT": true
+          },
+          "disabled": true,
+          "autoApprove": true,
+          "type": true
+        },
+        "grafana": {
+          "args": true,
+          "type": true
+        },
+        "m365": {
+          "args": true,
+          "type": true
+        }
+      },
+      "inputs": true
+    }
+  },
+  {
+    "target": "${APP_CONFIG}/Code - Insiders/User/prompts/instructions.md",
+    "source": "config/shared/ides/vscode-insiders/prompts/instructions.md",
+    "format": "text",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/Cursor/User/settings.json",
+    "source": "config/shared/ides/cursor/settings.json",
+    "format": "jsonc",
+    "mode": "copy",
+    "owned": {
+      "telemetry.telemetryLevel": true,
+      "workbench.settings.openDefaultKeybindings": true,
+      "security.workspace.trust.untrustedFiles": true,
+      "diffEditor.maxComputationTime": true,
+      "go.toolsManagement.autoUpdate": true,
+      "gitlens.launchpad.indicator.enabled": true,
+      "editor.minimap.enabled": true,
+      "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": true,
+        "editor.autoIndent": true,
+        "diffEditor.ignoreTrimWhitespace": true,
+        "editor.quickSuggestions": {
+          "other": true,
+          "comments": true,
+          "strings": true
+        }
+      },
+      "files.exclude": {
+        "**/.idea": true
+      },
+      "diffEditor.ignoreTrimWhitespace": true,
+      "openInGitHub.gitHubDomain": true,
+      "gitlens.views.scm.grouped.views": {
+        "commits": true,
+        "branches": true,
+        "remotes": true,
+        "stashes": true,
+        "tags": true,
+        "worktrees": true,
+        "contributors": true,
+        "repositories": true,
+        "searchAndCompare": true,
+        "launchpad": true
+      },
+      "github.copilot.selectedCompletionModel": true,
+      "github.copilot.chat.codesearch.enabled": true,
+      "github.copilot.chat.newWorkspaceCreation.enabled": true,
+      "github.copilot.chat.search.semanticTextResults": true,
+      "editor.quickSuggestions": {
+        "strings": true
+      },
+      "chat.agent.enabled": true,
+      "gitlens.blame.format": true,
+      "gitlens.views.repositories.includeWorkingTree": true,
+      "gitlens.hovers.enabled": true,
+      "gitlens.statusBar.enabled": true,
+      "gitlens.hovers.avatars": true,
+      "gitlens.hovers.pullRequests.enabled": true,
+      "gitlens.hovers.autolinks.enabled": true,
+      "gitlens.hovers.autolinks.enhanced": true,
+      "gitlens.hovers.currentLine.enabled": true,
+      "gitlens.hovers.currentLine.changes": true,
+      "gitlens.hovers.currentLine.details": true,
+      "gitlens.hovers.annotations.details": true,
+      "git.blame.statusBarItem.enabled": true,
+      "gitlens.blame.compact": true,
+      "editor.hover.enabled": true,
+      "html.hover.documentation": true,
+      "css.hover.documentation": true,
+      "eslint.validate": true,
+      "python.analysis.autoFormatStrings": true,
+      "python.analysis.completeFunctionParens": true,
+      "python.analysis.generateWithTypeAnnotation": true,
+      "python.analysis.inlayHints.callArgumentNames": true,
+      "python.analysis.inlayHints.functionReturnTypes": true,
+      "python.analysis.inlayHints.variableTypes": true,
+      "python.linting.enabled": true,
+      "python.linting.ruffEnabled": true,
+      "python.languageServer": true,
+      "python.formatting.provider": true,
+      "[python]": {
+        "editor.defaultFormatter": true,
+        "diffEditor.ignoreTrimWhitespace": true
+      },
+      "gitHistory.includeRemoteBranches": true,
+      "ruff.lint.ignore": true,
+      "editor.formatOnSaveMode": true,
+      "python.analysis.typeCheckingMode": true,
+      "cursorpyright.analysis.inlayHints.callArgumentNames": true,
+      "cursorpyright.analysis.inlayHints.functionReturnTypes": true,
+      "cursorpyright.analysis.inlayHints.variableTypes": true,
+      "cursorpyright.analysis.typeCheckingMode": true,
+      "workbench.editor.enablePreview": true,
+      "remote.SSH.connectTimeout": true,
+      "remote.SSH.useExecServer": true,
+      "remote.SSH.showLoginTerminal": true,
+      "workbench.activityBar.location": true,
+      "github.copilot.nextEditSuggestions.enabled": true,
+      "chat.agentsControl.enabled": true,
+      "python.useEnvironmentsExtension": true,
+      "chat.tools.urls.autoApprove": {
+        "https://code.visualstudio.com": true,
+        "https://github.com/microsoft/vscode/wiki/*": true,
+        "https://github.com": {
+          "approveRequest": true,
+          "approveResponse": true
+        },
+        "https://repo1.maven.org": true,
+        "https://arrow.apache.org": true,
+        "https://*.apache.org": true,
+        "https://issues.apache.org": true
+      },
+      "python.terminal.useEnvFile": true,
+      "chat.promptFilesLocations": {
+        "~/.claude": true
+      },
+      "chat.promptFilesRecommendations": {},
+      "chat.planAgent.defaultModel": true,
+      "github.copilot.chat.additionalReadAccessPaths": true,
+      "github.copilot.chat.cli.branchSupport.enabled": true,
+      "github.copilot.chat.copilotMemory.enabled": true,
+      "github.copilot.chat.cli.checkpoints.enabled": true,
+      "chat.viewSessions.orientation": true,
+      "gitlens.currentLine.enabled": true,
+      "gitlens.hovers.currentLine.over": true,
+      "gitlens.defaultDateStyle": true,
+      "redhat.telemetry.enabled": true,
+      "gitweblinks.defaultBranch": true
+    }
+  },
+  {
+    "target": "${APP_CONFIG}/Cursor/User/settings.json",
+    "source": "config/macos/ides/cursor/settings.json",
+    "format": "jsonc",
+    "mode": "copy",
+    "platform": "macos",
+    "owned": {
+      "terminal.integrated.env.osx": {},
+      "python.defaultInterpreterPath": true
+    }
+  },
+  {
+    "target": "${APP_CONFIG}/Cursor/User/keybindings.json",
+    "source": "config/macos/ides/cursor/keybindings.json",
+    "format": "jsonc",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/baseRefactoring.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/baseRefactoring.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/colors.scheme.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/colors.scheme.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/console-font.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/console-font.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/csvSettings.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/csvSettings.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/dataViewsSettings.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/dataViewsSettings.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/debugger.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/debugger.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/diff.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/diff.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/editor-font.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/editor-font.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/editor.rich.copy.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/editor.rich.copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/editor.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/editor.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/filetypes.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/filetypes.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/find.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/find.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/gutter.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/gutter.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/ide.general.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/ide.general.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/notifications.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/notifications.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/one_dark_config.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/one_dark_config.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/overrideFileTypes.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/overrideFileTypes.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/projectView.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/projectView.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/ui.lnf.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/ui.lnf.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/options/vcs.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/options/vcs.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/keymaps/IntelliJ IDEA Classic copy.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/keymaps/IntelliJ IDEA Classic copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/keymaps/XWin copy 1.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/keymaps/XWin copy 1.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/keymaps/XWin copy.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/keymaps/XWin copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/keymaps/macOS copy 1.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/keymaps/macOS copy 1.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/keymaps/macOS copy.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/keymaps/macOS copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/codestyles/Default.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/codestyles/Default.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/colors/_@user_One Dark Vivid Italic.icls",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/colors/_@user_One Dark Vivid Italic.icls",
+    "format": "text",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/GoLand2023.3/inspection/Default.xml",
+    "source": "config/macos/ides/jetbrains/GoLand2023.3/inspection/Default.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/baseRefactoring.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/baseRefactoring.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/colors.scheme.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/colors.scheme.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/console-font.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/console-font.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/csvSettings.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/csvSettings.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/dataViewsSettings.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/dataViewsSettings.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/debugger.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/debugger.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/diff.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/diff.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/editor-font.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/editor-font.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/editor.rich.copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/editor.rich.copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/editor.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/editor.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/filetypes.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/filetypes.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/find.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/find.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/full.line.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/full.line.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/gutter.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/gutter.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/ide.general.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/ide.general.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/keymapFlags.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/keymapFlags.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/laf.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/laf.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/notifications.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/notifications.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/one_dark_config.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/one_dark_config.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/overrideFileTypes.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/overrideFileTypes.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/projectView.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/projectView.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/ui.lnf.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/ui.lnf.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/options/vcs.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/options/vcs.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/keymaps/IntelliJ IDEA Classic copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/keymaps/IntelliJ IDEA Classic copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/keymaps/XWin copy 1.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/keymaps/XWin copy 1.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/keymaps/XWin copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/keymaps/XWin copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/keymaps/macOS copy 1.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/keymaps/macOS copy 1.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/keymaps/macOS copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/keymaps/macOS copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/codestyles/Default.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/codestyles/Default.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/colors/_@user_One Dark Vivid Italic.icls",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/colors/_@user_One Dark Vivid Italic.icls",
+    "format": "text",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2023.3/inspection/Default.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2023.3/inspection/Default.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/baseRefactoring.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/baseRefactoring.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/colors.scheme.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/colors.scheme.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/console-font.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/console-font.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/csvSettings.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/csvSettings.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/dataViewsSettings.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/dataViewsSettings.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/debugger.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/debugger.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/diff.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/diff.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/editor-font.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/editor-font.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/editor.rich.copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/editor.rich.copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/editor.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/editor.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/filetypes.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/filetypes.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/find.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/find.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/full.line.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/full.line.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/gutter.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/gutter.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/ide.general.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/ide.general.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/keymapFlags.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/keymapFlags.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/laf.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/laf.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/notifications.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/notifications.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/one_dark_config.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/one_dark_config.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/overrideFileTypes.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/overrideFileTypes.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/projectView.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/projectView.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/terminal.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/terminal.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/ui.lnf.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/ui.lnf.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/options/vcs.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/options/vcs.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/keymaps/IntelliJ IDEA Classic copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/keymaps/IntelliJ IDEA Classic copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/keymaps/XWin copy 1.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/keymaps/XWin copy 1.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/keymaps/XWin copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/keymaps/XWin copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/keymaps/macOS copy 1.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/keymaps/macOS copy 1.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/keymaps/macOS copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/keymaps/macOS copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/codestyles/Default.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/codestyles/Default.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/colors/_@user_One Dark Vivid Italic.icls",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/colors/_@user_One Dark Vivid Italic.icls",
+    "format": "text",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2024.1/inspection/Default.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2024.1/inspection/Default.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/advancedSettings.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/advancedSettings.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/baseRefactoring.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/baseRefactoring.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/colors.scheme.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/colors.scheme.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/console-font.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/console-font.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/csvSettings.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/csvSettings.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/dataViewsSettings.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/dataViewsSettings.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/debugger.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/debugger.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/diff.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/diff.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/editor-font.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/editor-font.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/editor.rich.copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/editor.rich.copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/editor.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/editor.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/filetypes.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/filetypes.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/find.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/find.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/full.line.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/full.line.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/gutter.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/gutter.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/ide.general.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/ide.general.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/keymapFlags.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/keymapFlags.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/laf.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/laf.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/llm.mcpServers.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/llm.mcpServers.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/llm.nextEdits.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/llm.nextEdits.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/mcpServer.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/mcpServer.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/notifications.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/notifications.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/one_dark_config.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/one_dark_config.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/overrideFileTypes.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/overrideFileTypes.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/projectView.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/projectView.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/terminal-font.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/terminal-font.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/terminal.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/terminal.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/ui.lnf.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/ui.lnf.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/options/vcs.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/options/vcs.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/keymaps/IntelliJ IDEA Classic copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/keymaps/IntelliJ IDEA Classic copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/keymaps/XWin copy 1.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/keymaps/XWin copy 1.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/keymaps/XWin copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/keymaps/XWin copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/keymaps/macOS copy 1.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/keymaps/macOS copy 1.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/keymaps/macOS copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/keymaps/macOS copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/codestyles/Default.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/codestyles/Default.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/colors/_@user_One Dark Vivid Italic.icls",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/colors/_@user_One Dark Vivid Italic.icls",
+    "format": "text",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2025.3/inspection/Default.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2025.3/inspection/Default.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/AIAssistantPromptLibraryStorage.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/AIAssistantPromptLibraryStorage.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/advancedSettings.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/advancedSettings.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/baseRefactoring.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/baseRefactoring.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/colors.scheme.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/colors.scheme.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/console-font.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/console-font.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/csvSettings.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/csvSettings.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/dataViewsSettings.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/dataViewsSettings.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/debugger.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/debugger.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/diff.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/diff.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/editor-font.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/editor-font.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/editor.rich.copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/editor.rich.copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/editor.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/editor.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/filetypes.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/filetypes.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/find.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/find.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/full.line.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/full.line.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/gutter.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/gutter.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/ide.general.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/ide.general.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/keymapFlags.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/keymapFlags.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/laf.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/laf.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/llm.cloud.completion.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/llm.cloud.completion.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/llm.code.generation.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/llm.code.generation.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/llm.for.code.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/llm.for.code.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/llm.mcpServers.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/llm.mcpServers.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/llm.nextEdits.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/llm.nextEdits.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/mcpServer.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/mcpServer.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/ml.completion.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/ml.completion.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/notifications.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/notifications.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/one_dark_config.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/one_dark_config.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/overrideFileTypes.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/overrideFileTypes.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/projectView.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/projectView.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/terminal-font.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/terminal-font.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/terminal.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/terminal.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/ui.lnf.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/ui.lnf.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/options/vcs.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/options/vcs.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/keymaps/IntelliJ IDEA Classic copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/keymaps/IntelliJ IDEA Classic copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/keymaps/XWin copy 1.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/keymaps/XWin copy 1.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/keymaps/XWin copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/keymaps/XWin copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/keymaps/macOS copy 1.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/keymaps/macOS copy 1.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/keymaps/macOS copy.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/keymaps/macOS copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/codestyles/Default.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/codestyles/Default.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/colors/_@user_One Dark Vivid Italic.icls",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/colors/_@user_One Dark Vivid Italic.icls",
+    "format": "text",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/PyCharm2026.2/inspection/Default.xml",
+    "source": "config/macos/ides/jetbrains/PyCharm2026.2/inspection/Default.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/baseRefactoring.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/baseRefactoring.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/colors.scheme.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/colors.scheme.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/console-font.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/console-font.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/csvSettings.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/csvSettings.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/dataViewsSettings.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/dataViewsSettings.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/debugger.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/debugger.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/diff.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/diff.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/editor-font.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/editor-font.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/editor.rich.copy.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/editor.rich.copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/editor.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/editor.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/filetypes.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/filetypes.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/find.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/find.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/full.line.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/full.line.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/gutter.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/gutter.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/ide.general.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/ide.general.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/laf.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/laf.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/notifications.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/notifications.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/one_dark_config.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/one_dark_config.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/overrideFileTypes.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/overrideFileTypes.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/projectView.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/projectView.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/terminal.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/terminal.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/ui.lnf.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/ui.lnf.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/options/vcs.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/options/vcs.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/keymaps/IntelliJ IDEA Classic copy.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/keymaps/IntelliJ IDEA Classic copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/keymaps/XWin copy 1.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/keymaps/XWin copy 1.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/keymaps/XWin copy.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/keymaps/XWin copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/keymaps/macOS copy 1.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/keymaps/macOS copy 1.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/keymaps/macOS copy.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/keymaps/macOS copy.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/codestyles/Default.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/codestyles/Default.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/colors/_@user_One Dark Vivid Italic.icls",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/colors/_@user_One Dark Vivid Italic.icls",
+    "format": "text",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/WebStorm2024.1/inspection/Default.xml",
+    "source": "config/macos/ides/jetbrains/WebStorm2024.1/inspection/Default.xml",
+    "format": "xml",
+    "mode": "copy",
+    "platform": "macos"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/baseRefactoring.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/baseRefactoring.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/colors.scheme.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/colors.scheme.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/console-font.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/console-font.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/csvSettings.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/csvSettings.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/dataViewsSettings.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/dataViewsSettings.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/debugger.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/debugger.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/diff.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/diff.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/editor-font.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/editor-font.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/editor.rich.copy.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/editor.rich.copy.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/editor.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/editor.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/filetypes.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/filetypes.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/find.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/find.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/gutter.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/gutter.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/ide.general.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/ide.general.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/notifications.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/notifications.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/one_dark_config.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/one_dark_config.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/overrideFileTypes.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/overrideFileTypes.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/projectView.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/projectView.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/ui.lnf.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/ui.lnf.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/options/vcs.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/options/vcs.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/keymaps/IntelliJ IDEA Classic copy.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/keymaps/IntelliJ IDEA Classic copy.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/keymaps/XWin copy 1.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/keymaps/XWin copy 1.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/keymaps/XWin copy.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/keymaps/XWin copy.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/keymaps/macOS copy 1.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/keymaps/macOS copy 1.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/keymaps/macOS copy.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/keymaps/macOS copy.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/codestyles/Default.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/codestyles/Default.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/colors/_@user_One Dark Vivid Italic.icls",
+    "source": "config/shared/ides/jetbrains/GoLand/colors/_@user_One Dark Vivid Italic.icls",
+    "format": "text",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_GoLand}/inspection/Default.xml",
+    "source": "config/shared/ides/jetbrains/GoLand/inspection/Default.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/AIAssistantPromptLibraryStorage.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/AIAssistantPromptLibraryStorage.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/advancedSettings.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/advancedSettings.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/baseRefactoring.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/baseRefactoring.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/colors.scheme.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/colors.scheme.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/console-font.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/console-font.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/csvSettings.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/csvSettings.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/dataViewsSettings.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/dataViewsSettings.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/debugger.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/debugger.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/diff.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/diff.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/editor-font.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/editor-font.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/editor.rich.copy.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/editor.rich.copy.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/editor.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/editor.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/filetypes.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/filetypes.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/find.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/find.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/full.line.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/full.line.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/gutter.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/gutter.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/ide.general.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/ide.general.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/keymapFlags.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/keymapFlags.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/laf.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/laf.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/llm.cloud.completion.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/llm.cloud.completion.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/llm.code.generation.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/llm.code.generation.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/llm.for.code.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/llm.for.code.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/llm.mcpServers.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/llm.mcpServers.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/llm.nextEdits.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/llm.nextEdits.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/mcpServer.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/mcpServer.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/ml.completion.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/ml.completion.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/notifications.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/notifications.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/one_dark_config.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/one_dark_config.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/overrideFileTypes.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/overrideFileTypes.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/projectView.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/projectView.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/terminal-font.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/terminal-font.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/terminal.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/terminal.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/ui.lnf.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/ui.lnf.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/options/vcs.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/options/vcs.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/keymaps/IntelliJ IDEA Classic copy.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/keymaps/IntelliJ IDEA Classic copy.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/keymaps/XWin copy 1.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/keymaps/XWin copy 1.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/keymaps/XWin copy.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/keymaps/XWin copy.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/keymaps/macOS copy 1.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/keymaps/macOS copy 1.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/keymaps/macOS copy.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/keymaps/macOS copy.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/codestyles/Default.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/codestyles/Default.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/colors/_@user_One Dark Vivid Italic.icls",
+    "source": "config/shared/ides/jetbrains/PyCharm/colors/_@user_One Dark Vivid Italic.icls",
+    "format": "text",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_PyCharm}/inspection/Default.xml",
+    "source": "config/shared/ides/jetbrains/PyCharm/inspection/Default.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/baseRefactoring.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/baseRefactoring.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/colors.scheme.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/colors.scheme.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/console-font.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/console-font.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/csvSettings.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/csvSettings.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/dataViewsSettings.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/dataViewsSettings.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/debugger.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/debugger.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/diff.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/diff.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/editor-font.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/editor-font.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/editor.rich.copy.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/editor.rich.copy.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/editor.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/editor.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/filetypes.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/filetypes.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/find.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/find.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/full.line.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/full.line.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/gutter.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/gutter.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/ide.general.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/ide.general.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/laf.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/laf.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/notifications.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/notifications.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/one_dark_config.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/one_dark_config.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/overrideFileTypes.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/overrideFileTypes.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/projectView.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/projectView.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/terminal.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/terminal.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/ui.lnf.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/ui.lnf.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/options/vcs.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/options/vcs.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/keymaps/IntelliJ IDEA Classic copy.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/keymaps/IntelliJ IDEA Classic copy.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/keymaps/XWin copy 1.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/keymaps/XWin copy 1.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/keymaps/XWin copy.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/keymaps/XWin copy.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/keymaps/macOS copy 1.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/keymaps/macOS copy 1.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/keymaps/macOS copy.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/keymaps/macOS copy.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/codestyles/Default.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/codestyles/Default.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/colors/_@user_One Dark Vivid Italic.icls",
+    "source": "config/shared/ides/jetbrains/WebStorm/colors/_@user_One Dark Vivid Italic.icls",
+    "format": "text",
+    "mode": "copy"
+  },
+  {
+    "target": "${APP_CONFIG}/JetBrains/${JETBRAINS_WebStorm}/inspection/Default.xml",
+    "source": "config/shared/ides/jetbrains/WebStorm/inspection/Default.xml",
+    "format": "xml",
+    "mode": "copy"
+  },
+  {
+    "target": "${HOME}/.claude/CLAUDE.md",
+    "source": "ai/global-rules.md",
+    "format": "text",
+    "mode": "link"
+  },
+  {
+    "target": "${HOME}/.copilot/instructions/global-rules.md",
+    "source": "ai/global-rules.md",
+    "format": "text",
+    "mode": "link"
+  },
+  {
+    "target": "${APP_CONFIG}/Code/User/mcp.json",
+    "source": "config/macos/ides/vscode/mcp.json",
+    "format": "jsonc",
+    "mode": "copy",
+    "platform": "macos",
+    "owned": {
+      "servers": {
+        "m365": {
+          "args": true,
+          "type": true
+        },
+        "grafana": {
+          "args": true,
+          "type": true
+        }
+      }
+    }
+  },
+  {
+    "target": "${APP_CONFIG}/Cursor/User/mcp.json",
+    "source": "config/macos/ides/cursor/mcp.json",
+    "format": "jsonc",
+    "mode": "copy",
+    "platform": "macos",
+    "owned": {
+      "servers": {
+        "m365": {
+          "args": true,
+          "type": true
+        },
+        "grafana": {
+          "args": true,
+          "type": true
+        }
+      }
+    }
+  },
+  {
+    "target": "${CONFIG_HOME}/ghostty/config",
+    "source": "config/shared/ghostty/loader",
+    "format": "text",
+    "mode": "copy"
+  },
+  {
+    "target": "${CONFIG_HOME}/ghostty/shared",
+    "source": "config/shared/ghostty/shared",
+    "format": "text",
+    "mode": "link"
+  },
+  {
+    "target": "${CONFIG_HOME}/ghostty/platform",
+    "source": "config/macos/ghostty/platform",
+    "format": "text",
+    "mode": "link",
+    "platform": "macos"
+  },
+  {
+    "target": "${CONFIG_HOME}/ghostty/platform",
+    "source": "config/ubuntu/ghostty/platform",
+    "format": "text",
+    "mode": "link",
+    "platform": "ubuntu"
+  },
+  {
+    "target": "${CONFIG_HOME}/terminator/config",
+    "source": "config/ubuntu/terminator/config",
+    "format": "configobj",
+    "mode": "copy",
+    "platform": "ubuntu",
+    "owned": {
+      "profiles": {
+        "default": {
+          "use_system_font": true,
+          "font": true,
+          "use_theme_colors": true,
+          "background_color": true,
+          "foreground_color": true,
+          "palette": true,
+          "background_type": true,
+          "cursor_blink": true,
+          "cursor_color_default": true,
+          "cursor_bg_color": true,
+          "cursor_fg_color": true,
+          "copy_on_selection": true,
+          "scrollback_infinite": true,
+          "audible_bell": true,
+          "urgent_bell": true,
+          "icon_bell": true,
+          "cursor_shape": true
+        }
+      }
+    }
+  }
+]

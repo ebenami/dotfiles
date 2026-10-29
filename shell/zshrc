@@ -1,0 +1,88 @@
+# Personal shell configuration; work integration is explicitly enabled by its installer.
+typeset -g DOTFILES_SHELL_DIR=${${(%):-%x}:A:h}
+
+source "$DOTFILES_SHELL_DIR/platform.zsh"
+
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=50000
+setopt extended_history share_history hist_expire_dups_first hist_ignore_dups hist_verify auto_cd
+cdpath=("$HOME/work")
+
+typeset -g ZINIT_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zinit/zinit.git"
+typeset -g SHELL_PLUGIN_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/dotfiles-shell-plugins"
+# Reuse the previous installation until the full installer restores this location.
+if [[ ! -d "$SHELL_PLUGIN_HOME" && -d "${XDG_DATA_HOME:-$HOME/.local/share}/snippets-shell-plugins" ]]; then
+  SHELL_PLUGIN_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/snippets-shell-plugins"
+fi
+if [[ -f "$ZINIT_HOME/zinit.zsh" ]]; then
+  source "$ZINIT_HOME/zinit.zsh"
+fi
+
+autoload -Uz compinit
+compinit -i
+
+if (( $+functions[zinit] )) && [[ -d "$SHELL_PLUGIN_HOME/ohmyzsh" ]]; then
+  # Starship handles the prompt, so the OMZ git library does not need async prompt hooks.
+  zstyle ':omz:alpha:lib:git' async-prompt no
+  zinit snippet "$SHELL_PLUGIN_HOME/ohmyzsh/lib/git.zsh"
+  zinit snippet "$SHELL_PLUGIN_HOME/ohmyzsh/lib/directories.zsh"
+  zinit snippet "$SHELL_PLUGIN_HOME/ohmyzsh/plugins/git/git.plugin.zsh"
+fi
+
+if (( $+commands[fzf] )); then
+  if fzf --zsh >/dev/null 2>&1; then
+    eval "$(fzf --zsh)"
+  else
+    for fzf_dir in /usr/share/doc/fzf/examples /usr/share/fzf/shell; do
+      [[ -f "$fzf_dir/completion.zsh" ]] && source "$fzf_dir/completion.zsh"
+      [[ -f "$fzf_dir/key-bindings.zsh" ]] && source "$fzf_dir/key-bindings.zsh"
+    done
+  fi
+fi
+
+if (( $+functions[zinit] )) && [[ -d "$SHELL_PLUGIN_HOME/fzf-tab" ]]; then
+  zinit light "$SHELL_PLUGIN_HOME/fzf-tab"
+fi
+if (( $+functions[zinit] )) && [[ -d "$SHELL_PLUGIN_HOME/zsh-autosuggestions" ]]; then
+  ZSH_AUTOSUGGEST_STRATEGY=(history)
+  zinit light "$SHELL_PLUGIN_HOME/zsh-autosuggestions"
+fi
+if (( $+functions[zinit] )) && [[ -d "$SHELL_PLUGIN_HOME/zsh-syntax-highlighting" ]]; then
+  zinit light "$SHELL_PLUGIN_HOME/zsh-syntax-highlighting"
+fi
+
+if (( $+commands[starship] )); then
+  export STARSHIP_CONFIG="$DOTFILES_SHELL_DIR/starship.toml"
+  eval "$(starship init zsh)"
+fi
+if (( $+commands[fnm] )); then
+  eval "$(fnm env --use-on-cd --shell zsh --version-file-strategy=recursive)"
+fi
+if (( $+commands[zoxide] )); then
+  eval "$(zoxide init zsh)"
+fi
+if (( $+commands[pyenv] )); then
+  eval "$(pyenv init - zsh)"
+fi
+
+source "$DOTFILES_SHELL_DIR/aliases.zsh"
+# Installed only by the separate work setup. General setup never creates this link.
+if [[ -r "${XDG_CONFIG_HOME:-$HOME/.config}/dotfiles/work.zsh" ]]; then
+  source "${XDG_CONFIG_HOME:-$HOME/.config}/dotfiles/work.zsh"
+fi
+[[ -r "${XDG_CONFIG_HOME:-$HOME/.config}/dotfiles/local.zsh" ]] && source "${XDG_CONFIG_HOME:-$HOME/.config}/dotfiles/local.zsh"
+
+# Search history using the text before the cursor when pressing Up or Down.
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[OA' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
+bindkey '^[OB' down-line-or-beginning-search
+
+# Stop word movement at path separators in Ghostty.
+if [[ $TERM_PROGRAM == ghostty ]]; then
+  WORDCHARS=${WORDCHARS//\/}
+fi

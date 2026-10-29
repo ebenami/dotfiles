@@ -1,0 +1,100 @@
+{
+  "servers": {
+    "markitdown": {
+      "command": "uvx",
+      "args": [
+        "markitdown-mcp"
+      ],
+      "type": "stdio"
+    },
+    "GitLab": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@zereight/mcp-gitlab"
+      ],
+      "env": {
+        "GITLAB_READ_ONLY_MODE": "false",
+        "USE_GITLAB_WIKI": "false",
+        "USE_MILESTONE": "false",
+        "USE_PIPELINE": "true"
+      },
+      "type": "stdio"
+    },
+    "confluence": {
+      "command": "uvx",
+      "args": [
+        "--with",
+        "pydantic==2.11.3",
+        "mcp-atlassian"
+      ],
+      "type": "stdio"
+    },
+    "jira": {
+      "command": "uvx",
+      "args": [
+        "--with",
+        "pydantic==2.11.3",
+        "mcp-atlassian"
+      ],
+      "type": "stdio"
+    },
+    "awslabs.aws-api-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-api-mcp-server@latest"
+      ],
+      "disabled": false,
+      "autoApprove": [],
+      "type": "stdio"
+    },
+    "awslabs.aws-documentation-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-documentation-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_DOCUMENTATION_PARTITION": "aws",
+        "MCP_USER_AGENT": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+      },
+      "disabled": false,
+      "autoApprove": [],
+      "type": "stdio"
+    },
+    "grafana": {
+      "args": [
+        "grafana"
+      ],
+      "type": "stdio"
+    },
+    "m365": {
+      "args": [
+        "m365"
+      ],
+      "type": "stdio"
+    }
+  },
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "gitlab_token_v2",
+      "description": "GitLab Personal Access Token"
+    },
+    {
+      "type": "promptString",
+      "id": "confluence_token",
+      "description": "Confluence Personal Access Token"
+    },
+    {
+      "type": "promptString",
+      "id": "jira_token",
+      "description": "JIRA Personal Access Token"
+    },
+    {
+      "type": "promptString",
+      "id": "grafana_token",
+      "description": "Grafana Service Account Token"
+    }
+  ]
+}
