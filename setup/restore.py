@@ -62,6 +62,7 @@ def main():
         if source.exists() and not (target.exists() or target.is_symlink()):
             target.parent.mkdir(parents=True,exist_ok=True)
             target.symlink_to(source)
+    failed_extensions=[]
     if args.extensions:
         for cli, extensions in data.get('extensions',{}).items():
             executable=shutil.which(cli)
@@ -71,7 +72,14 @@ def main():
             installed=subprocess.check_output([executable,'--list-extensions'],text=True).lower().splitlines()
             for name in extensions:
                 if name.lower() not in installed:
-                    subprocess.run([executable,'--install-extension',name],check=True)
+                    result=subprocess.run([executable,'--install-extension',name],check=False)
+                    if result.returncode:
+                        failed_extensions.append(f'{cli}: {name}')
+    if failed_extensions:
+        print('Warning: these extensions could not be installed; setup will continue:', file=sys.stderr)
+        for extension in failed_extensions:
+            print(f'  {extension}', file=sys.stderr)
+        print('Review the CLI errors above, resolve compatibility or installation issues, then rerun restoration.', file=sys.stderr)
     print('Tool restoration finished; existing installations were preserved.')
 
 
