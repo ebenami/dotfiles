@@ -92,6 +92,33 @@ class PortabilityTests(unittest.TestCase):
         self.assertNotIn('custom_command',captured['profiles']['default'])
         self.assertTrue(list((self.home/'.local/state/personal/backups').rglob('config')))
 
+    def test_apply_replaces_dangling_symlink_and_preserves_link_backup(self):
+        for mode in ('link', 'copy'):
+            with self.subTest(mode=mode), tempfile.TemporaryDirectory() as temp:
+                self.home = Path(temp).resolve()
+                source = self.repo / 'config/instructions'
+                source.write_text('Personal instructions\n')
+                entry = {'source':'config/instructions', 'target':'${HOME}/.claude/CLAUDE.md',
+                         'format':'text', 'mode':mode}
+                (self.repo / 'config/manifest.json').write_text(json.dumps([entry]))
+                target = self.home / '.claude/CLAUDE.md'
+                target.parent.mkdir()
+                missing = '../old-checkout/instructions.md'
+                target.symlink_to(missing)
+                self.sync('apply', write=False)
+                self.assertEqual(os.readlink(target), missing)
+                self.assertFalse((self.home / '.local/state').exists())
+                self.sync('apply')
+                self.assertEqual(target.read_text(), source.read_text())
+                self.assertEqual(target.is_symlink(), mode == 'link')
+                backups = [directory / '.claude/CLAUDE.md'
+                           for directory in (self.home / '.local/state/personal/backups').iterdir()]
+                self.assertEqual(len(backups), 1)
+                self.assertTrue(backups[0].is_symlink())
+                self.assertEqual(os.readlink(backups[0]), missing)
+                self.sync('apply')
+                self.assertEqual(target.read_text(), source.read_text())
+
     def test_personal_snapshots_apply_cleanly_on_both_platforms(self):
         for platform in ('macos','ubuntu'):
             with self.subTest(platform=platform), tempfile.TemporaryDirectory() as temp:

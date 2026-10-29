@@ -353,9 +353,13 @@ def config_sync(args):
             relative = path.relative_to(home) if path.is_relative_to(home) else Path('external') / digest(str(path))[:16] / path.name
             backup = xdg(home, 'XDG_STATE_HOME', '.local/state') / namespace / 'backups' / time.strftime('%Y%m%d-%H%M%S') / relative
             backup.parent.mkdir(parents=True, exist_ok=True)
-            if not backup.exists():
-                shutil.copy2(path, backup, follow_symlinks=True)
-                backup.chmod(0o600)
+            if not backup.exists() and not backup.is_symlink():
+                if path.is_symlink() and not path.exists():
+                    # Preserve dangling links without reading their missing targets.
+                    backup.symlink_to(os.readlink(path))
+                else:
+                    shutil.copy2(path, backup, follow_symlinks=True)
+                    backup.chmod(0o600)
         if action == 'link':
             path.parent.mkdir(parents=True, exist_ok=True)
             if path.exists() or path.is_symlink():
